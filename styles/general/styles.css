@@ -1,0 +1,74 @@
+/* Declaring all the necessary things for navigation bar, body and footer for every common page */
+*
+{
+  box-sizing: border-box;
+  font-family: 'Noto Sans Display', sans-serif;
+}
+.navbar-custom
+{
+  background: #3AAFA9;
+  font-size: 18px;
+}
+body
+{
+  background: #FEFFFF;  
+}
+
+.active-custom
+{
+  background: #3AAFA9;
+}
+
+.dropdown-menu :hover
+{
+  background: rgb(222, 242, 241);
+}
+
+.dropdown:hover .dropdown-menu 
+  {
+    display: block;
+    margin-top: 0;
+ }
+ 
+.footer-custom
+{
+  background:rgb(222, 242, 241);
+}
+
+
+
+
+
+/** Text effect when hovered in navbar **/
+
+a.text-effect 
+{
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+
+a.text-effect:after 
+{
+	content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 100%;
+  border-bottom: 1px solid;
+  margin-top: 10px;
+  opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale(0,1);
+	transform: scale(0,1);
+}
+
+a.text-effect:hover:after 
+{
+  opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+

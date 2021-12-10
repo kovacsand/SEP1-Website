@@ -1,0 +1,209 @@
+/*** Title and page content for course description **/
+.title-content
+{
+  font-size: 0.9rem;
+  padding-left: 10px;
+}
+
+.page-content
+{
+  font-size: 0.9rem;
+  padding-left: 10px;
+}
+
+/** Courses catalogue page layout **/
+
+.grid {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+	margin: 0 auto;
+	padding: 4em 0 4em;
+  max-width: 100vw;
+	list-style: none;
+	text-align: center;
+}
+
+.grid figure {
+	position: relative;
+	overflow: hidden;
+  margin: 10px 1%;
+	width: 100%;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
+}
+
+.grid figure img {
+	position: relative;
+	display: inline;
+	min-height: 100%;
+	max-width: 100%;
+	opacity: 0.8;
+}
+
+.grid figure figcaption {
+	padding: 1em;
+  padding-right: 0;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.grid figure figcaption > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+/** Text attributes before by default when not hovered **/
+
+.grid figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 700;
+}
+
+.grid figure h2,
+.grid figure p {
+	margin: 0;
+}
+
+.grid figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
+/** Hover effects on figures, images etc **/
+
+figure.hover-effect {
+	background: #42b078;
+}
+
+figure.hover-effect img {
+	max-width: none;
+	width: -webkit-calc(100% + 20px);
+	width: calc(100% + 20px);
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(-10px,0,0);
+	transform: translate3d(-10px,0,0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+figure.hover-effect:hover img {
+	opacity: 0.4;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+figure.hover-effect figcaption {
+	text-align: left;
+}
+
+figure.hover-effect h2 {
+	position: relative;
+	overflow: hidden;
+	padding: 0.5em 0;
+}
+
+figure.hover-effect h2::after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background: #fff;
+	content: '';
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(-100%,0,0);
+	transform: translate3d(-100%,0,0);
+}
+
+figure.hover-effect:hover h2::after {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+figure.hover-effect p {
+	padding: 1em 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(100%,0,0);
+	transform: translate3d(100%,0,0);
+}
+
+figure.hover-effect:hover p {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+/*********** Breakpoints **************/
+
+@media only screen and (max-width: 576px) 
+{
+  .grid 
+  {
+    padding-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 992px) 
+{
+  .column
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 50vw;
+  }
+  .row
+  {
+    margin: 5px;
+    margin-bottom: 5px;
+  }
+  .grid
+  {
+    padding-top: 1.5em;
+  }
+}
+
+@media only screen and (min-width: 992px)
+{
+  .column
+  {
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+  }
+}

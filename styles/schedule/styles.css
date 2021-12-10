@@ -1,0 +1,283 @@
+.timetable
+{
+    width: 70%;
+    height:60%;
+    
+}
+.timetable-closed
+{
+    display: none;
+}
+
+
+
+#button-timetable1-accordion label
+{
+    box-shadow:0 0 20px #d4d4d4;
+    display: block;
+    padding: 8px 22px;
+    margin: 20px 0px 1px 0px;
+    cursor: pointer;
+    background: #5f75a4;
+    color: #FFF;
+    transition: ease .5s;
+}
+#button-timetable2-accordion label{
+    box-shadow:0 0 20px #d4d4d4;
+    display: block;
+    padding: 8px 22px;
+    margin: 20px 0px 1px 0px;
+    cursor: pointer;
+    background: #5f75a4;
+    color: #FFF;
+    transition: ease .5s;
+}
+#timetable2-accordion label:hover
+{
+    background: #2B7A78  ;
+    cursor: pointer;
+}
+#timetable-accordion label:hover
+{
+    background: #2B7A78;
+    cursor: pointer;
+}
+
+
+.timetable
+{
+
+    box-shadow:0 0 20px #d4d4d4;
+    background: #ffff;
+    padding: 10px 25px;
+    border: 1px solid #d4d4d4;
+    margin:-1px 0px 0px 0px;
+}
+
+/* #timetable-accordion input:checked + .week-header + .timetable {
+    display: block;
+    webkit-animation: fadeIn 0.5s ease-out;
+    -moz-animation: fadeIn 0.5s ease-out;
+    -o-animation: fadeIn 0.5s ease-out;
+    animation: fadeIn 0.5s ease-out;
+}
+#timetable2-accordion input:checked+label+.timetable
+{
+    display: block;
+    webkit-animation: fadeIn 0.5s ease-out;
+    -moz-animation: fadeIn 0.5s ease-out;
+    -o-animation: fadeIn 0.5s ease-out;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    1% {
+        display: block;
+        opacity: 0;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+    }
+} */
+
+.week-dates, .week-names
+{
+  text-align: center;
+}
+
+
+/*Important dates holidays*/
+
+#important-dates, #important-dates-text
+{
+  text-align: center;
+}
+#important-dates 
+{
+  color: red;
+}
+
+/*styling the dates*/
+
+.semester-start, .semester-end, .project, .exam, .autumn, .christmas
+{
+  text-align:center;
+  justify-content: center;
+  border: .1rem solid #2B7A78;
+  border-collapse: collapse;
+  
+}
+
+.date-title{
+  font-weight: bold;
+  color:#3AAFA9;
+}
+
+.table
+{
+    text-align: center;
+}
+
+.sdj
+{
+    border-style: solid;
+    border-color: black;
+    background: #5f75ff;
+}
+
+
+.dma
+{
+    border-style: solid;
+    background: green;
+    border-color: black;
+
+}
+.sep
+{
+    background: red;
+}
+.ws
+{
+    border-top: indigo;
+    border-style: solid;
+}
+.rwd
+{
+    border-color: hotpink;
+    border-style: solid;
+}
+
+
+/* this is mobile calendar */
+
+#timetable-accordion, #timetable2-accordion
+{
+  display: none;
+}
+
+#mobile-version
+{
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+}
+
+.week
+{
+  width: 100%;
+  text-align: center; 
+}
+.week-header
+{
+  padding-top: 10vh;
+  font-weight: 700;
+}
+.days
+{
+  margin: auto;
+  width: 80%;
+  background: #DEF2F1;
+  border: 3px solid black;
+  border-radius: 20px;
+  margin-top: 1vh;
+  margin-bottom:1vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+.time
+{
+  font-style: italic;
+  color: lightgray;
+}
+.lecture
+{
+  margin: auto;
+  background: yellow;
+  color: white;
+  width: 80%;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+}
+.mobile-sep
+{
+  background: #098DC7;
+}
+.mobile-sdj
+{
+  background: #00A0BD;
+}
+.mobile-dma
+{
+  background: #A0376B;
+}
+.mobile-rwd
+{
+  background: #8C569D;
+
+}
+
+
+@media (min-width: 768px)
+{
+  .week
+  {
+    display: flex;
+    margin: auto;
+    width: 90%;
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  .week-header, .days
+  {
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+  }
+  .week-header
+  {
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1vh;
+    margin-bottom:1vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+}
+
+#schedule-big-container
+{
+  text-align: center;
+}
+
+#schedule-big
+{
+  width: 75%
+}
+#schedule-big-caption
+{
+  text-decoration: none;
+}
+#schedule-big-link
+{
+  text-decoration: none;
+  color: black;
+  font-family: 'Noto Sans Display', sans-serif;
+  font-size: 18px;
+}

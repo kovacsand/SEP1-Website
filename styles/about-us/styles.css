@@ -1,0 +1,190 @@
+/*ABOUT US*/
+
+@media only screen and (max-width: 768px)
+{
+  .about-us
+  {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 768px){
+  .about-us p
+  {
+    text-align: justify;
+  }
+}
+#about-us-title
+{
+    text-align: center;
+    margin-top: 1rem;
+
+
+}
+
+/*Fading Animations*/
+@keyframes fadeIn
+{
+0% {opacity:0;}
+60%{opacity:0;}
+100% {opacity:1;}
+}
+
+@keyframes popIN
+{
+  0% {transform: scale(.80);}
+  10% {transform: scale(1.2);}
+  60% {transform:scale(1);}
+  100%{border-bottom: .2rem solid #3AAFA9;}
+}
+
+.title
+{
+  animation: popIN linear 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.title-text
+{
+  animation: fadeIn linear 2s;
+}
+
+.andras
+{
+  animation: fadeIn 3s;
+}
+
+.fanni
+{
+  animation: fadeIn 3.2s;
+}
+
+.james
+{
+  animation: fadeIn 3.4s;
+}
+
+.kristians
+{
+  animation: fadeIn 3.6s;
+}
+
+.sofia
+{
+  animation: fadeIn 3.8s;
+}
+
+/*Small Screen toggle descriptions*/
+.btn {
+  padding: 0;
+  margin: .5rem;
+}
+
+.btn:focus 
+{
+  outline: none;
+  box-shadow: none;
+}
+
+.card
+{
+  margin-bottom: .5rem;  
+}
+
+/*Images*/
+.about-us img
+{
+    border: .3rem solid #3AAFA9;
+    margin-bottom: .5rem;
+    padding: 0;
+}
+/*Greetings*/
+.about-us h2
+{
+    margin-top: 1rem;
+    border-bottom: .1rem solid #3AAFA9;
+}
+
+#about-us-text
+{
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/*CONTACT*/
+
+#message
+{
+  padding: 0.5rem;
+}
+.message-form
+{
+  margin: auto;
+  padding-bottom: 1rem;
+}
+.message-form label
+{
+  padding-top:0.5rem;
+}
+.message-form button
+{
+  background: #3AAFA9;
+  float: right;
+  color: #def2f1;
+  margin-top: -2.3rem;
+  padding: .2rem;
+}
+.message-form button:hover
+{
+background: #2b7a78;
+color: #def2f1;
+}
+.message-form input:hover
+{
+background: #def2f1;
+}
+.message-form textarea:hover
+{
+  background: #def2f1;
+}
+.message-form #attach-file:hover
+{
+  background:white;
+}
+.message-form h2
+{
+  text-align: center;
+}
+.form-control-file
+{
+display: -webkit-box;
+flex-shrink: 0;
+}
+#line-break
+{
+  display: none;
+}
+
+@media only screen and (max-width: 768px) 
+{
+  .message-form
+  {
+  width: 70%;
+  }
+  #line-break
+  {
+    display: block;
+    height: 50px;
+    width: 100%;
+  }
+  #send-button
+  {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 768px)
+{
+.message-form
+  {
+  width: 40%;
+  }
+}
