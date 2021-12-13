@@ -281,3 +281,11 @@
   font-family: 'Noto Sans Display', sans-serif;
   font-size: 18px;
 }
+
+#new-schedule-table tr, #new-schedule-table td, #new-schedule-table th
+{
+  height: 50px;
+  width: 100px;
+  border: 0.2rem solid black;
+  border-collapse: collapse;
+}
