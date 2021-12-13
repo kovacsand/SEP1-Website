@@ -289,3 +289,19 @@
   border: 0.2rem solid black;
   border-collapse: collapse;
 }
+
+#search-button{
+  color: rgb(222, 242, 241);
+    background: rgb(58, 175, 169);
+    padding: 0.4rem;
+}
+
+#search{
+  width: 100%;
+  margin-right: 1rem;
+
+}
+
+#search-div{
+  margin: 1rem;
+}

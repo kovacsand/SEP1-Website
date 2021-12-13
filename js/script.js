@@ -111,6 +111,18 @@ function refreshTable()
         document.getElementById(tableId).innerHTML = courses[i] + "\n" + teachers[i] + "\n" + rooms[i];
     }
 }
+ //SEARCH
+ function check(){
+    let foundID;
+    for(let i=0;i<ids.length;i++){
+        if(ids.includes(document.getElementById("search"))){ 
+            foundID=ids[i];
+        }
+    }
+    
+    console.log(document.getElementById("search").value);
+
+}
 
 //Stuff that we want to run when page is opened
 init();
