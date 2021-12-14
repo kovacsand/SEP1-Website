@@ -98,17 +98,8 @@
   </div>
 </div>
 
-<div class="row" id="search-div" >
-  <div class="col">
-  <input type="text" class="form-control" name="search" id="search" placeholder="Enter your ID">
-</div>
-<div class="col">
-  <button type="submit" class="btn send" id="search-button" onclick="check()">Search</button>
-</div>
-</div>
-   
 
-<!-- mobile version -->
+<!--
 <div id="mobile-version">
   <div class="week">
     <h4 class="week-header">Week 43<span class="week-header-line-break"><br /></span></h4>
@@ -120,21 +111,21 @@
       <h5>Tuesday 26/10</h5>
       <p class="mobile-dma lecture">DMA - RIB - C.05.15<br /><span class="time">8:20 - 11:50</span></p>
       <p class="mobile-dma lecture">DMA - Study café - RIB - Discord<br /><span class="time">16:10 - 17:45</span></p>
-    </div> 
+    </div>
     <div class="days">
       <h5>Wednesday 27/10</h5>
       <p class="mobile-sep lecture">SEP - MWA - C.05.15<br /><span class="time">8:20 - 16:05</span></p>
-    </div>          
+    </div>
     <div class="days">
       <h5>Thursday 28/10</h5>
       <p class="mobile-sdj lecture">SDJ - ALHE - C.05.15<br /><span class="time">8:20 - 11:50</span></p>
       <p class="mobile-rwd lecture">RWD - KASR - C.05.15<br /><span class="time">12:45 - 16:05</span></p>
       <p class="mobile-dma lecture">DMA - Study café - RIB - Discord <br /><span class="time">16:10 - 17:45</span></p>
-    </div>          
+    </div>
     <div class="days">
       <h5>Friday 29/10</h5>
       <p class="mobile-sdj lecture">WS - C.05.15<br /><span class="time">12:45 - 16:05</span></p>
-    </div>   
+    </div>
   </div>
   <div class="week">
     <h4 class="week-header">Week 44<span class="week-header-line-break"><br /></span></h4>
@@ -148,35 +139,43 @@
       <p class="mobile-dma lecture">DMA - RIB - C.05.15<br /><span class="time">8:20 - 11:50</span></p>
       <p class="mobile-sdj lecture">SDJ - ALHE - C.05.15<br /><span class="time">12:45 - 16:05</span></p>
       <p class="mobile-dma lecture">DMA -Study café - RIB - Discord<br /><span class="time">16:10 - 17:45</span></p>
-    </div> 
+    </div>
     <div class="days">
       <h5>Wednesday 3/11</h5>
       <p class="mobile-sep lecture">SEP - MWA - C.05.15<br /><span class="time">8:20 - 14:20</span></p>
-    </div>          
+    </div>
     <div class="days">
       <h5>Thursday 4/11</h5>
       <p class="mobile-rwd lecture">RWD - KASR - C.05.15<br /><span class="time">12:45 - 16:05</span></p>
       <p class="mobile-dma lecture">DMA - Study café-RIB - Discord<br /><span class="time">16:10 - 17:45</span></p>
-    </div>          
+    </div>
     <div class="days">
       <h5>Friday 5/11</h5>
       <p class="mobile-sdj lecture">WS - C.05.15<br /><span class="time">12:45 - 16:05</span></p>
-    </div>   
+    </div>
   </div>
-</div>    
+</div>
+-->
 
 
-<!--schedule page ends here-->
-
-<!-- xml data test-->
-<p id="xml-test-text">This text should be changed</p>
+ <div class="row" id="search-div" >
+   <div class="col">
+     <input type="text" class="form-control" name="search" id="search" placeholder="Enter your ID">
+   </div>
+   <div class="col">
+     <button type="submit" class="btn send" id="search-button" onclick="check()">Search</button>
+   </div>
+ </div>
 
 <!-- new schedule table-->
+<div id="week-nav">
+  <button id="previous-week"><</button><span id="week-number-title">Week number</span><button id="next-week">></button>
+</div>
 <div id="new-schedule-table">
   <table>
     <tr>
-      <th>Times</th>
-      <th>Monday</th>
+      <th></th>
+      <th>Mon</th>
       <th>Tue</th>
       <th>Wed</th>
       <th>Thu</th>
@@ -184,183 +183,184 @@
     </tr>
     <tr>
       <td>08:00</td>
-      <td id="monday-8"></td>
-      <td id="tuesday-8"></td>
-      <td id="wednesday-8"></td>
-      <td id="thursday-8"></td>
-      <td id="friday-8"></td>
+      <td id="monday-800"></td>
+      <td id="tuesday-800"></td>
+      <td id="wednesday-800"></td>
+      <td id="thursday-800"></td>
+      <td id="friday-800"></td>
     </tr>
     <tr>
       <td>08:30</td>
-      <td id="monday-83"></td>
-      <td id="tuesday-83"></td>
-      <td id="wednesday-83"></td>
-      <td id="thursday-83"></td>
-      <td id="friday-83"></td>
+      <td id="monday-830"></td>
+      <td id="tuesday-830"></td>
+      <td id="wednesday-830"></td>
+      <td id="thursday-830"></td>
+      <td id="friday-830"></td>
     </tr>
     <tr>
       <td>09:00</td>
-      <td id="monday-9"></td>
-      <td id="tuesday-9"></td>
-      <td id="wednesday-9"></td>
-      <td id="thursday-9"></td>
-      <td id="friday-9"></td>
+      <td id="monday-900"></td>
+      <td id="tuesday-900"></td>
+      <td id="wednesday-900"></td>
+      <td id="thursday-900"></td>
+      <td id="friday-900"></td>
     </tr>
     <tr>
       <td>09:30</td>
-      <td id="monday-93"></td>
-      <td id="tuesday-93"></td>
-      <td id="wednesday-93"></td>
-      <td id="thursday-93"></td>
-      <td id="friday-93"></td>
+      <td id="monday-930"></td>
+      <td id="tuesday-930"></td>
+      <td id="wednesday-930"></td>
+      <td id="thursday-930"></td>
+      <td id="friday-930"></td>
     </tr>
     <tr>
       <td>10:00</td>
-      <td id="monday-10"></td>
-      <td id="tuesday-10"></td>
-      <td id="wednesday-10"></td>
-      <td id="thursday-10"></td>
-      <td id="friday-10"></td>
+      <td id="monday-1000"></td>
+      <td id="tuesday-1000"></td>
+      <td id="wednesday-1000"></td>
+      <td id="thursday-1000"></td>
+      <td id="friday-1000"></td>
     </tr>
     <tr>
       <td>10:30</td>
-      <td id="monday-103"></td>
-      <td id="tuesday-103"></td>
-      <td id="wednesday-103"></td>
-      <td id="thursday-103"></td>
-      <td id="friday-103"></td>
+      <td id="monday-1030"></td>
+      <td id="tuesday-1030"></td>
+      <td id="wednesday-1030"></td>
+      <td id="thursday-1030"></td>
+      <td id="friday-1030"></td>
     </tr>
     <tr>
       <td>11:00</td>
-      <td id="monday-11"></td>
-      <td id="tuesday-11"></td>
-      <td id="wednesday-11"></td>
-      <td id="thursday-11"></td>
-      <td id="friday-11"></td>
+      <td id="monday-1100"></td>
+      <td id="tuesday-1100"></td>
+      <td id="wednesday-1100"></td>
+      <td id="thursday-1100"></td>
+      <td id="friday-1100"></td>
     </tr>
     <tr>
       <td>11:30</td>
-      <td id="monday-113"></td>
-      <td id="tuesday-113"></td>
-      <td id="wednesday-113"></td>
-      <td id="thursday-113"></td>
-      <td id="friday-113"></td>
+      <td id="monday-1130"></td>
+      <td id="tuesday-1130"></td>
+      <td id="wednesday-1130"></td>
+      <td id="thursday-1130"></td>
+      <td id="friday-1130"></td>
     </tr>
     <tr>
       <td>12:00</td>
-      <td id="monday-12"></td>
-      <td id="tuesday-12"></td>
-      <td id="wednesday-12"></td>
-      <td id="thursday-12"></td>
-      <td id="friday-12"></td>
+      <td id="monday-1200"></td>
+      <td id="tuesday-1200"></td>
+      <td id="wednesday-1200"></td>
+      <td id="thursday-1200"></td>
+      <td id="friday-1200"></td>
     </tr>
     <tr>
       <td>12:30</td>
-      <td id="monday-123"></td>
-      <td id="tuesday-123"></td>
-      <td id="wednesday-123"></td>
-      <td id="thursday-123"></td>
-      <td id="friday-123"></td>
+      <td id="monday-1230"></td>
+      <td id="tuesday-1230"></td>
+      <td id="wednesday-1230"></td>
+      <td id="thursday-1230"></td>
+      <td id="friday-1230"></td>
     </tr>
     <tr>
       <td>13:00</td>
-      <td id="monday-13"></td>
-      <td id="tuesday-13"></td>
-      <td id="wednesday-13"></td>
-      <td id="thursday-13"></td>
-      <td id="friday-13"></td>
+      <td id="monday-1300"></td>
+      <td id="tuesday-1300"></td>
+      <td id="wednesday-1300"></td>
+      <td id="thursday-1300"></td>
+      <td id="friday-1300"></td>
     </tr>
     <tr>
       <td>13:30</td>
-      <td id="monday-133"></td>
-      <td id="tuesday-133"></td>
-      <td id="wednesday-133"></td>
-      <td id="thursday-133"></td>
-      <td id="friday-133"></td>
+      <td id="monday-1330"></td>
+      <td id="tuesday-1330"></td>
+      <td id="wednesday-1330"></td>
+      <td id="thursday-1330"></td>
+      <td id="friday-1330"></td>
     </tr>
     <tr>
       <td>14:00</td>
-      <td id="monday-14"></td>
-      <td id="tuesday-14"></td>
-      <td id="wednesday-14"></td>
-      <td id="thursday-14"></td>
-      <td id="friday-14"></td>
+      <td id="monday-1400"></td>
+      <td id="tuesday-1400"></td>
+      <td id="wednesday-1400"></td>
+      <td id="thursday-1400"></td>
+      <td id="friday-1400"></td>
     </tr>
     <tr>
       <td>14:30</td>
-      <td id="monday-143"></td>
-      <td id="tuesday-143"></td>
-      <td id="wednesday-143"></td>
-      <td id="thursday-143"></td>
-      <td id="friday-143"></td>
+      <td id="monday-1430"></td>
+      <td id="tuesday-1430"></td>
+      <td id="wednesday-1430"></td>
+      <td id="thursday-1430"></td>
+      <td id="friday-1430"></td>
     </tr>
     <tr>
       <td>15:00</td>
-      <td id="monday-15"></td>
-      <td id="tuesday-15"></td>
-      <td id="wednesday-15"></td>
-      <td id="thursday-15"></td>
-      <td id="friday-15"></td>
+      <td id="monday-1500"></td>
+      <td id="tuesday-1500"></td>
+      <td id="wednesday-1500"></td>
+      <td id="thursday-1500"></td>
+      <td id="friday-1500"></td>
     </tr>
     <tr>
       <td>15:30</td>
-      <td id="monday-153"></td>
-      <td id="tuesday-153"></td>
-      <td id="wednesday-153"></td>
-      <td id="thursday-153"></td>
-      <td id="friday-153"></td>
+      <td id="monday-1530"></td>
+      <td id="tuesday-1530"></td>
+      <td id="wednesday-1530"></td>
+      <td id="thursday-1530"></td>
+      <td id="friday-1530"></td>
     </tr>
     <tr>
       <td>16:00</td>
-      <td id="monday-16"></td>
-      <td id="tuesday-16"></td>
-      <td id="wednesday-16"></td>
-      <td id="thursday-16"></td>
-      <td id="friday-16"></td>
+      <td id="monday-1600"></td>
+      <td id="tuesday-1600"></td>
+      <td id="wednesday-1600"></td>
+      <td id="thursday-1600"></td>
+      <td id="friday-1600"></td>
     </tr>
     <tr>
       <td>16:30</td>
-      <td id="monday-163"></td>
-      <td id="tuesday-163"></td>
-      <td id="wednesday-163"></td>
-      <td id="thursday-163"></td>
-      <td id="friday-163"></td>
+      <td id="monday-1630"></td>
+      <td id="tuesday-1630"></td>
+      <td id="wednesday-1630"></td>
+      <td id="thursday-1630"></td>
+      <td id="friday-1630"></td>
     </tr>
     <tr>
       <td>17:00</td>
-      <td id="monday-17"></td>
-      <td id="tuesday-17"></td>
-      <td id="wednesday-17"></td>
-      <td id="thursday-17"></td>
-      <td id="friday-17"></td>
+      <td id="monday-1700"></td>
+      <td id="tuesday-1700"></td>
+      <td id="wednesday-1700"></td>
+      <td id="thursday-1700"></td>
+      <td id="friday-1700"></td>
     </tr>
     <tr>
       <td>17:30</td>
-      <td id="monday-173"></td>
-      <td id="tuesday-173"></td>
-      <td id="wednesday-173"></td>
-      <td id="thursday-173"></td>
-      <td id="friday-173"></td>
+      <td id="monday-1730"></td>
+      <td id="tuesday-1730"></td>
+      <td id="wednesday-1730"></td>
+      <td id="thursday-1730"></td>
+      <td id="friday-1730"></td>
     </tr>
     <tr>
       <td>18:00</td>
-      <td id="monday-18"></td>
-      <td id="tuesday-18"></td>
-      <td id="wednesday-18"></td>
-      <td id="thursday-18"></td>
-      <td id="friday-18"></td>
+      <td id="monday-1800"></td>
+      <td id="tuesday-1800"></td>
+      <td id="wednesday-1800"></td>
+      <td id="thursday-1800"></td>
+      <td id="friday-1800"></td>
     </tr>
     <tr>
       <td>18:30</td>
-      <td id="monday-183"></td>
-      <td id="tuesday-183"></td>
-      <td id="wednesday-183"></td>
-      <td id="thursday-183"></td>
-      <td id="friday-183"></td>
+      <td id="monday-1830"></td>
+      <td id="tuesday-1830"></td>
+      <td id="wednesday-1830"></td>
+      <td id="thursday-1830"></td>
+      <td id="friday-1830"></td>
     </tr>
   </table>
 </div>
 
+<!--schedule page ends here-->
 
 <!-- Footer -->
 

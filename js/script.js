@@ -15,6 +15,21 @@ function init() {
 
     currentWeek = weekOfYear(currentWeek.getDate(), currentWeek.getMonth() + 1, currentWeek.getFullYear());
     chosenWeek = currentWeek;
+    $("#week-number").text("Week " + chosenWeek);
+
+    clearTable();
+
+    $("#previous-week").on("click", function()
+    {
+        chosenWeek--;
+        check();
+    });
+
+    $("#next-week").on("click", function ()
+    {
+        chosenWeek++;
+        check();
+    });
 }
 
 function dayOfWeek(day, month, year) {
@@ -42,22 +57,22 @@ function calculateLength(time) {
     return endMinute - startMinute;
 }
 
-function importData() {
-    requestXML();
+function importData(userId) {
+    requestXML(userId);
 }
 
-function requestXML() {
+function requestXML(userId) {
     let xHttp = new XMLHttpRequest();
     xHttp.onreadystatechange = function ()
     {
         if (this.readyState == 4 && this.status == 200)
-            getData(this);
+            getData(this, userId);
     };
     xHttp.open("GET", "sessions.xml");
     xHttp.send();
 }
 
-function getData(xml) {
+function getData(xml, userId) {
     let xmlDoc = xml.responseXML;
     sessions = xmlDoc.getElementsByTagName("session");
 
@@ -69,24 +84,28 @@ function getData(xml) {
         years[i] = parseInt(dates[i].substr(6, 2)) + 2000;
         times[i] = sessions[i].querySelector("time").childNodes[0].nodeValue;
         lengths[i] = calculateLength(times[i]);
-
         rooms[i] = sessions[i].querySelector("room").childNodes[0].nodeValue;
         teachers[i] = sessions[i].querySelector("teacher").childNodes[0].nodeValue;
-        ids[i] = sessions[i].querySelector("ids").childNodes[0].nodeValue;
-
-        document.getElementById("xml-test-text").innerHTML = courses[0] + dates[0] + times[0] + rooms[0] + teachers[0] + ids[0];
+        ids[i] = sessions[i].querySelector("ids").childNodes[0].nodeValue.replace(/\s/g, '').split(",");
     }
-
-    refreshTable();
+    updateTable(userId);
 }
 
-function refreshTable()
-{
+function clearTable() {
+    $("#week-number-title").text("Week " + chosenWeek);
+    $('td:nth-child(2), td:nth-child(3), td:nth-child(4), td:nth-child(5), td:nth-child(6)').attr("rowspan", "1");
+    $("td").css("display", "table-cell");
+    $('td:nth-child(2), td:nth-child(3), td:nth-child(4), td:nth-child(5), td:nth-child(6)').text("");
+    $('td:nth-child(2), td:nth-child(3), td:nth-child(4), td:nth-child(5), td:nth-child(6)').css("background-color", "white");
+}
+
+function updateTable(userId) {
+    $("#week-number").text("Week " + chosenWeek);
     for (let i = 0; i < sessions.length; i++)
     {
-        let tableId;
-        if (weekOfYear(days[i], months[i], years[i] === currentWeek))
-        {
+        let tableId, tableLastCellId, dayOfTheSession;
+        if (ids[i].includes(userId) && weekOfYear(days[i], months[i], years[i]) == chosenWeek) {
+            console.log("ID found");
             tableId = dayOfWeek(days[i], months[i], years[i]);
             if (tableId == 1)
                 tableId = "monday";
@@ -102,48 +121,55 @@ function refreshTable()
                 tableId = "saturday";
             if (tableId == 7)
                 tableId = "sunday";
+            dayOfTheSession = tableId;
+            tableLastCellId = tableId + "-";
             tableId += "-" + parseInt(times[i].substr(0, 2));
             if (Math.floor(parseInt(times[i].substr(3, 2)) / 30) != 0)
-                tableId += 3;
-            console.log(tableId);
-        }
+                tableId += 30;
+            else
+                tableId += "00";
+            tableLastCellId += parseInt(times[i].substr(8, 2));
+            if (Math.floor(parseInt(times[i].substr(11, 2)) / 30) != 0)
+                tableLastCellId += 30;
 
-        document.getElementById(tableId).innerHTML = courses[i] + "\n" + teachers[i] + "\n" + rooms[i];
+            document.getElementById(tableId).innerHTML =
+                courses[i] + "<br/>" + teachers[i] + "<br/>" + rooms[i] + "<br/>"+ times[i];
+            $("#" + tableId).css("background-color", "lightblue");
+
+
+            let firstToDelete = parseInt(times[i].substr(0, 2)) * 100;
+            if (Math.floor(parseInt(times[i].substr(3, 2)) / 30) != 0)
+                firstToDelete += 30;
+            if (firstToDelete % 100 == 30)
+                firstToDelete += 70;
+            else
+                firstToDelete += 30;
+
+            let lastToDelete = parseInt(times[i].substr(8, 2)) * 100;
+            if (Math.floor(parseInt(times[i].substr(11, 2)) / 30) != 0)
+                lastToDelete += 30;
+
+            let counter = 1;
+            let j = firstToDelete;
+            while (j <= lastToDelete) {
+                let cellToBeDeleted = dayOfTheSession + "-" + j;
+                $("#" + cellToBeDeleted).css("display", "none");
+                console.log("deleting one cell");
+                if (j % 100 == 30)
+                    j += 70;
+                else
+                    j += 30;
+                counter++;
+            }
+            $("#" + tableId).attr("rowspan", counter);
+        }
     }
 }
  //SEARCH
  function check(){
-    let foundID;
-    for(let i=0;i<ids.length;i++){
-        if(ids.includes(document.getElementById("search"))){ 
-            foundID=ids[i];
-        }
-    }
-    
-    console.log(document.getElementById("search").value);
-
+    clearTable();
+    importData(document.getElementById("search").value);
 }
 
 //Stuff that we want to run when page is opened
 init();
-importData();
-
-
-
-
-
-// function showMyData(xml)
-// {
-//     let xmlDoc = xml.responseXML;
-//     let lists = xmlDoc.getElementsByTagName("list-of-things");
-//     let happyList = lists[0].getElementsByTagName("make-me-happy");
-//     let happyThings = happyList[0].getElementsByTagName("list-item");
-//     document.getElementById("happy").innerHTML += " " + happyThings.length;
-//     let goodList = lists[0].getElementsByTagName("i-am-good-at");
-//     let goodThings = goodList[0].getElementsByTagName("list-item");
-//     document.getElementById("good").innerHTML += " " + goodThings.length;
-//     let learnList = lists[0].getElementsByTagName("i-want-to-learn");
-//     let learnThings = learnList[0].getElementsByTagName("list-item");
-//     document.getElementById("learn").innerHTML += " " + learnThings.length;
-//
-// }
