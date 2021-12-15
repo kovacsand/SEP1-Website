@@ -46,44 +46,12 @@
 
 .timetable
 {
-
     box-shadow:0 0 20px #d4d4d4;
     background: #ffff;
     padding: 10px 25px;
     border: 1px solid #d4d4d4;
     margin:-1px 0px 0px 0px;
 }
-
-/* #timetable-accordion input:checked + .week-header + .timetable {
-    display: block;
-    webkit-animation: fadeIn 0.5s ease-out;
-    -moz-animation: fadeIn 0.5s ease-out;
-    -o-animation: fadeIn 0.5s ease-out;
-    animation: fadeIn 0.5s ease-out;
-}
-#timetable2-accordion input:checked+label+.timetable
-{
-    display: block;
-    webkit-animation: fadeIn 0.5s ease-out;
-    -moz-animation: fadeIn 0.5s ease-out;
-    -o-animation: fadeIn 0.5s ease-out;
-    animation: fadeIn 0.5s ease-out;
-}
-
-@-webkit-keyframes fadeIn {
-    0% {
-        display: none;
-        opacity: 0;
-    }
-    1% {
-        display: block;
-        opacity: 0;
-    }
-    100% {
-        display: block;
-        opacity: 1;
-    }
-} */
 
 .week-dates, .week-names
 {
@@ -282,18 +250,39 @@
   font-size: 18px;
 }
 
+#week-nav
+{
+  display: flex;
+  align-self: center;
+  padding: 0.2rem;
+}
+
+#week-number-title
+{
+  margin: 0.4rem;
+}
+
+#new-schedule-table
+{
+  display: flex;
+  align-self: center;
+  margin: 0.2rem;
+  margin-bottom: 1rem;
+}
+
 #new-schedule-table tr, #new-schedule-table td, #new-schedule-table th
 {
   height: 50px;
-  width: 100px;
+  width: 150px;
   border: 0.2rem solid black;
   border-collapse: collapse;
+  text-align: center;
 }
 
 #search-button{
   color: rgb(222, 242, 241);
-    background: rgb(58, 175, 169);
-    padding: 0.4rem;
+  background: rgb(58, 175, 169);
+  padding: 0.4rem;
 }
 
 #search{
@@ -304,4 +293,6 @@
 
 #search-div{
   margin: 1rem;
+  display: flex;
+  align-self: center;
 }
