@@ -292,7 +292,8 @@
 }
 
 #search-div{
-  margin: 1rem;
+  padding: 1rem;
+  margin: auto;
   display: flex;
-  align-self: center;
+  width: 25%;
 }
