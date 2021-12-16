@@ -14,6 +14,12 @@ body
   background: #FEFFFF;  
 }
 
+#body-content
+{
+  margin-top: 92px;
+  /*77px is the height of the navigation bar*/
+}
+
 .active-custom
 {
   background: #3AAFA9;
